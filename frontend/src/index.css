@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Literata:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #994522;
+  --color-primary-container: #b85d38;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  --color-primary-fixed: #ffdbce;
+  --color-primary-fixed-dim: #ffb59a;
+  --color-on-primary-fixed: #370e00;
+  --color-on-primary-fixed-variant: #7b2f0d;
+  --color-secondary: #4a645a;
+  --color-secondary-container: #cce9dc;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #506a60;
+  --color-secondary-fixed: #cce9dc;
+  --color-secondary-fixed-dim: #b1cdc0;
+  --color-on-secondary-fixed: #062018;
+  --color-on-secondary-fixed-variant: #334c43;
+  --color-tertiary: #7d562d;
+  --color-tertiary-container: #996e43;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffffff;
+  --color-tertiary-fixed: #ffdcbd;
+  --color-tertiary-fixed-dim: #f0bd8b;
+  --color-on-tertiary-fixed: #2c1600;
+  --color-on-tertiary-fixed-variant: #623f18;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-background: #fff8f3;
+  --color-on-background: #1d1b18;
+  --color-surface: #fff8f3;
+  --color-surface-dim: #dfd9d4;
+  --color-surface-bright: #fff8f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f9f2ed;
+  --color-surface-container: #f3ede7;
+  --color-surface-container-high: #ede7e2;
+  --color-surface-container-highest: #e7e1dc;
+  --color-surface-variant: #e7e1dc;
+  --color-on-surface: #1d1b18;
+  --color-on-surface-variant: #55433c;
+  --color-outline: #88726b;
+  --color-outline-variant: #dbc1b8;
+  --color-inverse-surface: #32302d;
+  --color-inverse-on-surface: #f6f0ea;
+  --color-inverse-primary: #ffb59a;
+  --color-surface-tint: #994623;
+  --font-family-literata: 'Literata', serif;
+  --font-family-geist: 'Geist', sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+    @apply bg-background font-ui-body-md text-ui-body-md text-on-surface antialiased;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+
+  .icon-fill {
+    font-variation-settings: 'FILL' 1;
+  }
+
+  /* Page flip animation */
+  @keyframes pageFlip {
+    0% { transform: perspective(2000px) rotateY(0deg); }
+    100% { transform: perspective(2000px) rotateY(-180deg); }
+  }
+
+  .page-flip-animate {
+    animation: pageFlip 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  /* Skeleton shimmer */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #f3ede7 25%, #e7e1dc 50%, #f3ede7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 0.25rem;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-300;
+  }
+
+  /* Book cover spine */
+  .book-spine {
+    @apply absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none;
+  }
+
+  /* Reader page style */
+  .reader-page {
+    background-color: #FAF6EE;
+    @apply text-on-surface;
+  }
+
+  /* Selection highlight overlay */
+  .pdf-highlight {
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  /* No select for reader */
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
