@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><title>Folio — Immersive Mode</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Literata:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#334c43", "on-background": "#1d1b18", "on-surface": "#1d1b18", "primary": "#994522", "primary-fixed-dim": "#ffb59a", "error": "#ba1a1a", "surface-tint": "#994623", "tertiary-container": "#996e43", "outline-variant": "#dbc1b8", "inverse-primary": "#ffb59a", "on-tertiary-container": "#ffffff", "on-primary-fixed": "#370e00", "background": "#fff8f3", "surface-container-highest": "#e7e1dc", "surface-variant": "#e7e1dc", "on-secondary": "#ffffff", "on-error-container": "#93000a", "on-primary-fixed-variant": "#7b2f0d", "secondary-container": "#cce9dc", "surface-container": "#f3ede7", "surface-container-lowest": "#ffffff", "surface": "#fff8f3", "on-secondary-fixed": "#062018", "primary-fixed": "#ffdbce", "secondary-fixed-dim": "#b1cdc0", "primary-container": "#b85d38", "on-tertiary": "#ffffff", "on-surface-variant": "#55433c", "on-tertiary-fixed-variant": "#623f18", "tertiary-fixed-dim": "#f0bd8b", "error-container": "#ffdad6", "surface-bright": "#fff8f3", "tertiary-fixed": "#ffdcbd", "tertiary": "#7d562d", "on-error": "#ffffff", "secondary-fixed": "#cce9dc", "outline": "#88726b", "surface-container-high": "#ede7e2", "on-primary-container": "#ffffff", "surface-dim": "#dfd9d4", "on-tertiary-fixed": "#2c1600", "on-secondary-container": "#506a60", "inverse-surface": "#32302d", "on-primary": "#ffffff", "inverse-on-surface": "#f6f0ea", "surface-container-low": "#f9f2ed", "secondary": "#4a645a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "3rem", "gutter-mobile": "1rem", "margin": "2rem", "margin-desktop": "4rem", "space-lg": "1.75rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "gutter-desktop": "2.5rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Literata"], "display-lg": ["Literata"], "ui-body-md": ["Geist"], "reading-body-sm": ["Literata"], "headline-md": ["Literata"], "headline-lg-mobile": ["Literata"], "ui-body-sm": ["Geist"], "display-lg-mobile": ["Literata"], "reading-body-lg": ["Literata"], "reading-body-md": ["Literata"], "label-sm": ["Geist"], "label-md": ["Geist"], "headline-sm": ["Literata"] }, fontSize: { "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "ui-body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "reading-body-sm": ["16px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "ui-body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "reading-body-lg": ["21px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }], "reading-body-md": ["18px", { "lineHeight": "32px", "letterSpacing": "0.005em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-ui-body-md text-ui-body-md text-on-surface antialiased min-h-screen"><main class="w-full bg-surface min-h-screen"><div class="flex flex-col w-full relative select-none">
+<!-- AMBIENT READING LIGHT SCATTER -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-gradient-to-b from-primary-fixed/30 via-tertiary-fixed/15 to-transparent blur-3xl opacity-60"></div>
+<div class="absolute bottom-10 left-12 w-96 h-96 bg-secondary-container/20 blur-3xl rounded-full"></div>
+<div class="absolute top-1/3 right-10 w-80 h-80 bg-primary/5 blur-3xl rounded-full"></div>
+</div>
+<!-- DISCREET TOP AMBIENT DOCK -->
+<header class="relative z-30 w-full px-6 py-4 flex items-center justify-between transition-opacity duration-300">
+<!-- Left: Back & Work Identity -->
+<div class="flex items-center space-x-3">
+<a class="group flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-primary text-base transition-transform group-hover:-translate-x-0.5">arrow_back</span>
+<span class="font-label-md text-label-md text-on-surface">Library</span>
+</a>
+<span class="text-outline-variant font-label-sm">/</span>
+<div class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary">auto_stories</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Atomic Habits</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-outline">James Clear</span>
+</div>
+</div>
+<!-- Center: Context Pill -->
+<div class="hidden md:flex items-center space-x-2 px-4 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface">Chapter 7: The Secret to Self-Control</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-outline">pp. 126–127 of 320</span>
+</div>
+<!-- Right: Reader Toolbelt -->
+<div class="flex items-center space-x-2">
+<!-- Search within volume -->
+<button class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container transition-all text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-base">search</span>
+<span class="hidden lg:inline font-label-md text-label-md">Find in folio</span>
+<kbd class="hidden lg:inline px-1.5 py-0.5 rounded bg-surface-container-high text-label-sm text-outline font-label-sm">⌘F</kbd>
+</button>
+<!-- Bookmark state -->
+<button class="p-2 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container transition-all text-on-surface-variant hover:text-primary" id="bookmark-btn" onclick="toggleBookmark()">
+<span class="material-symbols-outlined text-base" id="bookmark-icon">bookmark_border</span>
+</button>
+<!-- Spread mode switch -->
+<div class="flex items-center bg-surface-container-lowest shadow-sm rounded-lg p-0.5">
+<button class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-fixed text-label-md font-label-md flex items-center space-x-1">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+<span class="hidden sm:inline">Spread</span>
+</button>
+<button class="px-2.5 py-1 rounded text-outline hover:text-on-surface text-label-md font-label-md flex items-center space-x-1">
+<span class="material-symbols-outlined text-sm">article</span>
+<span class="hidden sm:inline">Single</span>
+</button>
+</div>
+<!-- Zoom and Fullscreen -->
+<div class="flex items-center bg-surface-container-lowest shadow-sm rounded-lg p-0.5 space-x-0.5">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" onclick="adjustScale(-0.05)">
+<span class="material-symbols-outlined text-sm">zoom_out</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface px-1" id="zoom-indicator">100%</span>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" onclick="adjustScale(0.05)">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container text-outline hover:text-on-surface" onclick="toggleFullscreen()">
+<span class="material-symbols-outlined text-base">fullscreen</span>
+</button>
+</div>
+</header>
+<!-- KEYBOARD HUD HINT -->
+<div class="relative z-10 w-full flex justify-center -mt-1 mb-2">
+<div class="flex items-center space-x-2 text-outline font-label-sm text-label-sm bg-surface-container-low/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-xs">keyboard</span>
+<span>Turn with</span>
+<kbd class="px-1.5 py-0.2 rounded bg-surface-container-lowest font-semibold text-on-surface">←</kbd>
+<kbd class="px-1.5 py-0.2 rounded bg-surface-container-lowest font-semibold text-on-surface">→</kbd>
+<span>or</span>
+<kbd class="px-2 py-0.2 rounded bg-surface-container-lowest font-semibold text-on-surface">Space</kbd>
+<span>• Double-click outer margin to fold</span>
+</div>
+</div>
+<!-- BOOK STAGE / MAIN READING CANVAS -->
+<main class="relative z-10 w-full px-4 md:px-8 lg:px-12 flex justify-center items-center py-4">
+<!-- Outer Stack Rig: Imitates physical bulk of 320 pages bound together -->
+<div class="relative w-full max-w-[1240px] transition-transform duration-300" id="spread-container" style="perspective: 2400px;">
+<!-- Sub-page Archival Edge Shingling (Left deckle edges) -->
+<div class="absolute -left-3 top-3 bottom-3 w-4 bg-surface-container-highest rounded-l-md shadow-md -z-10 transform -skew-y-1"></div>
+<div class="absolute -left-1.5 top-1.5 bottom-1.5 w-3 bg-surface-container rounded-l shadow-sm -z-10"></div>
+<!-- Sub-page Archival Edge Shingling (Right deckle edges) -->
+<div class="absolute -right-3 top-3 bottom-3 w-4 bg-surface-container-highest rounded-r-md shadow-md -z-10 transform skew-y-1"></div>
+<div class="absolute -right-1.5 top-1.5 bottom-1.5 w-3 bg-surface-container rounded-r shadow-sm -z-10"></div>
+<!-- Book Block Main Surface -->
+<div class="relative flex flex-col md:flex-row bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden min-h-[680px]">
+<!-- =================== LEFT PAGE (PAGE 126) =================== -->
+<article class="relative flex-1 bg-[#FAF6EE] text-on-surface px-8 sm:px-12 lg:px-16 pt-12 pb-14 flex flex-col justify-between select-text cursor-default">
+<!-- Ambient Soft Leaf Illumination Overlay -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/[0.02] via-transparent to-black/[0.04]"></div>
+<!-- Running Header (Left) -->
+<header class="flex items-center justify-between pb-6 text-outline font-label-sm text-label-sm tracking-widest uppercase">
+<span>Atomic Habits</span>
+<span class="opacity-40">Section III • The 3rd Law</span>
+</header>
+<!-- Left Page Body Content -->
+<div class="flex flex-col space-y-6 max-w-[480px] mx-auto text-justify">
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-tight font-normal text-left pb-1">
+              Disciplined People Are Better at Structuring Their Environment
+            </h2>
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+              In 1971, as the Vietnam War was heading into its sixteenth year, congressmen Robert Steele and Morgan Murphy discovered something astonishing: over 15 percent of American soldiers stationed in Vietnam were regular heroin users. Subsequent research showed that 35 percent of enlisted men had tried heroin, and as many as 20 percent were clinically addicted.
+            </p>
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+              The discovery led to a flurry of panic in Washington, including the creation of the Special Action Office of Drug Abuse Prevention under President Nixon, tasked with tracking and rehabilitating soldiers upon their return home.
+            </p>
+<!-- Curated Highlighted Annotation -->
+<div class="relative group my-2 p-3 rounded-lg bg-tertiary-fixed/30 hover:bg-tertiary-fixed/40 transition-colors">
+<span class="absolute -left-2 top-3 w-1 h-8 bg-tertiary rounded-full"></span>
+<p class="font-reading-body-md text-reading-body-md italic text-on-tertiary-fixed">
+                “When soldiers who had been addicted to heroin returned to the United States, only 5 percent became re-addicted within a year, and just 12 percent relapsed within three years.”
+              </p>
+<div class="mt-2 flex items-center space-x-2 text-label-sm font-label-sm text-tertiary">
+<span class="material-symbols-outlined text-xs">edit_note</span>
+<span>Margin note by you: Robbins study on context cues (p. 126)</span>
+</div>
+</div>
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+              In other words, approximately nine out of ten soldiers who used heroin in Vietnam were cured virtually overnight. They didn’t undergo sheer willpower exercises or moral reformation; their entire cue environment had radically transformed.
+            </p>
+</div>
+<!-- Left Running Footer -->
+<footer class="pt-8 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span class="font-reading-body-sm text-reading-body-sm font-medium text-on-surface">126</span>
+<span class="opacity-50">Make it Obvious</span>
+</footer>
+</article>
+<!-- =================== ARCHIVAL BINDING GROOVE & SPINE CREASE =================== -->
+<div class="relative w-full md:w-8 h-3 md:h-auto bg-gradient-to-r md:bg-gradient-to-r from-black/10 via-black/25 to-black/10 flex-shrink-0 flex items-center justify-center pointer-events-none shadow-inner z-20">
+<!-- Subtle Binding Thread Stitch Impressions -->
+<div class="hidden md:flex flex-col space-y-16 opacity-30">
+<span class="w-1.5 h-3 border-y border-outline-variant"></span>
+<span class="w-1.5 h-3 border-y border-outline-variant"></span>
+<span class="w-1.5 h-3 border-y border-outline-variant"></span>
+<span class="w-1.5 h-3 border-y border-outline-variant"></span>
+<span class="w-1.5 h-3 border-y border-outline-variant"></span>
+</div>
+</div>
+<!-- =================== RIGHT PAGE (PAGE 127) =================== -->
+<article class="relative flex-1 bg-[#FAF6EE] text-on-surface px-8 sm:px-12 lg:px-16 pt-12 pb-14 flex flex-col justify-between select-text cursor-default overflow-hidden">
+<!-- Ambient Light Reflection on Right Incline -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-l from-black/[0.03] via-transparent to-black/[0.02]"></div>
+<!-- Running Header (Right) -->
+<header class="flex items-center justify-between pb-6 text-outline font-label-sm text-label-sm tracking-widest uppercase">
+<span class="opacity-40">Chapter 7 • The Secret to Self-Control</span>
+<span>James Clear</span>
+</header>
+<!-- Right Page Body Content with Chapter Head & Drop Cap -->
+<div class="flex flex-col space-y-6 max-w-[480px] mx-auto text-justify relative z-10">
+<!-- Chapter Title Banner -->
+<div class="pt-1 pb-4">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-primary font-semibold block mb-1">Chapter 7</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">The Secret to Self-Control</h1>
+</div>
+<!-- Paragraph with Classic Literary Drop Cap -->
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+<span class="float-left text-display-lg font-display-lg leading-[46px] pr-3 pt-1 text-primary font-semibold">T</span>
+              he Robins study contradicted many of our cultural beliefs about bad habits. We have been taught that unhealthy habits are moral weaknesses. If you are overweight or a smoker or an addict, you’ve been told your entire life that it is because you lack self-discipline.
+            </p>
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+              Yet when scientists analyze people who appear to have tremendous willpower, it turns out those individuals aren’t all that different from those who are struggling. Instead, “disciplined” people are simply better at structuring their lives in a way that <em>does not require</em> heroic willpower and self-control.
+            </p>
+<!-- Inline Infographic: Cue Density Comparison -->
+<div class="my-3 p-4 rounded-xl bg-surface-container-low shadow-sm flex flex-col space-y-3 not-italic text-left">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Habit Architecture Metric</span>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">Resisting Temptation (Willpower Tax)</span>
+<span class="text-error font-medium">High Friction • 12% Success</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-error rounded-full h-2 w-[18%]"></div>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md pt-1">
+<span class="text-on-surface">Removing Tempting Cues (Environment)</span>
+<span class="text-secondary font-medium">Zero Friction • 88% Success</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-secondary rounded-full h-2 w-[88%]"></div>
+</div>
+</div>
+<p class="font-reading-body-md text-reading-body-md leading-relaxed text-on-surface/90">
+              In short, they spend less time in tempting situations. The people with the greatest self-control are typically the ones who need to use it the least.
+            </p>
+</div>
+<!-- Right Running Footer -->
+<footer class="pt-8 flex items-center justify-between text-outline font-label-sm text-label-sm relative z-10">
+<span class="opacity-50">Atomic Habits</span>
+<span class="font-reading-body-sm text-reading-body-sm font-medium text-on-surface">127</span>
+</footer>
+<!-- ================= TACTILE 3D PAGE CURL ILLUSION (BOTTOM RIGHT) ================= -->
+<div class="group absolute bottom-0 right-0 w-28 h-28 cursor-pointer z-30 flex items-end justify-end p-2.5 transition-all duration-300" id="page-turn-trigger" onclick="triggerFlipAnimation()" title="Click or press Right Arrow to turn to Page 128">
+<!-- Page Curl Geometric Shadow and Fold -->
+<div class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-surface-dim via-surface-container-high to-transparent rounded-tl-3xl opacity-75 group-hover:w-24 group-hover:h-24 group-hover:opacity-100 transition-all duration-300 shadow-md"></div>
+<div class="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-surface-container-lowest to-surface-bright rounded-tl-2xl shadow-sm transform group-hover:scale-110 transition-transform"></div>
+<!-- Hover cue tooltip tag -->
+<div class="relative z-40 flex items-center space-x-1 text-primary opacity-80 group-hover:opacity-100 transform group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="font-label-sm text-label-sm font-bold">128</span>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</div>
+</div>
+</article>
+</div>
+<!-- DYNAMIC PAGE FLIP SHADOW RIG (Interactive visual simulation) -->
+<div class="hidden absolute top-0 right-0 w-1/2 h-full bg-[#FAF6EE] shadow-2xl rounded-r-xl pointer-events-none z-40 origin-left" id="flip-layer">
+<div class="w-full h-full p-12 bg-gradient-to-l from-black/10 via-transparent to-black/20 flex flex-col justify-center items-center">
+<span class="material-symbols-outlined text-4xl text-primary animate-pulse">auto_stories</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-3">Turning to page 128...</span>
+</div>
+</div>
+</div>
+</main>
+<!-- QUICK ANNOTATION & READING TOOLS STRIP (Side floating bookplate) -->
+<aside class="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col space-y-3 z-30">
+<button class="p-2.5 rounded-full bg-surface-container-lowest shadow-md hover:bg-tertiary-fixed text-tertiary transition-transform hover:scale-110" title="Archival Highlighter">
+<span class="material-symbols-outlined text-lg">stylus_note</span>
+</button>
+<button class="p-2.5 rounded-full bg-surface-container-lowest shadow-md hover:bg-secondary-container text-secondary transition-transform hover:scale-110" title="Add Bookmark">
+<span class="material-symbols-outlined text-lg">collections_bookmark</span>
+</button>
+<button class="p-2.5 rounded-full bg-surface-container-lowest shadow-md hover:bg-primary-fixed text-primary transition-transform hover:scale-110" title="Definition Lookup">
+<span class="material-symbols-outlined text-lg">dictionary</span>
+</button>
+<button class="p-2.5 rounded-full bg-surface-container-lowest shadow-md hover:bg-surface-container text-on-surface-variant transition-transform hover:scale-110" title="Audio Narration">
+<span class="material-symbols-outlined text-lg">headphones</span>
+</button>
+</aside>
+<!-- ================= BOTTOM FLOATING READING CONTROL ISLAND ================= -->
+<footer class="relative z-30 w-full px-4 pb-6 pt-2 flex flex-col items-center">
+<div class="w-full max-w-3xl bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl shadow-xl p-3 sm:px-6 sm:py-3.5 flex flex-col space-y-3">
+<!-- Upper Strip: Direct Navigation & Scrubbing Track -->
+<div class="flex items-center justify-between space-x-4">
+<!-- Previous Page Spread Button -->
+<button class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="prevPage()">
+<span class="material-symbols-outlined text-base">west</span>
+<span class="hidden sm:inline font-label-md text-label-md">Page 124–125</span>
+</button>
+<!-- Chapter Progress Scrubber with Markers -->
+<div class="flex-1 flex flex-col items-center space-y-1">
+<div class="w-full relative flex items-center">
+<!-- Custom Chapter Progress Bar -->
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="folio-slider" max="320" min="1" oninput="onSliderMove(this.value)" type="range" value="127"/>
+</div>
+<div class="w-full flex justify-between font-label-sm text-label-sm text-outline px-1">
+<span>Ch. 1</span>
+<span class="font-medium text-primary">Ch. 7: The Secret to Self-Control</span>
+<span>Ch. 20</span>
+</div>
+</div>
+<!-- Next Page Spread Button -->
+<button class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" onclick="nextPage()">
+<span class="hidden sm:inline font-label-md text-label-md">Page 128–129</span>
+<span class="material-symbols-outlined text-base">east</span>
+</button>
+</div>
+<!-- Lower Strip: Precision Metadata & Typography/Appearance Controls -->
+<div class="pt-2 flex items-center justify-between font-label-md text-label-md text-on-surface-variant flex-wrap gap-2">
+<!-- Reading Pace & Stats -->
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-sm">timelapse</span>
+<span>~4 min left in chapter</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center space-x-1">
+<span class="font-medium text-on-surface" id="page-display">39.6% complete</span>
+<span class="text-outline text-label-sm">(p. 127/320)</span>
+</div>
+</div>
+<!-- Reading Appearance Trigger & Color Mode Toggles -->
+<div class="flex items-center space-x-2">
+<!-- Tone Swatches -->
+<div class="flex items-center space-x-1 p-1 bg-surface-container rounded-lg">
+<button class="w-5 h-5 rounded-full bg-[#FAF6EE] shadow-sm hover:scale-110 transition-transform ring-1 ring-primary" onclick="setPaperTone('cream')" title="Warm Archival Linen"></button>
+<button class="w-5 h-5 rounded-full bg-[#FFFFFF] shadow-sm hover:scale-110 transition-transform" onclick="setPaperTone('ivory')" title="Cool Ivory Paper"></button>
+<button class="w-5 h-5 rounded-full bg-[#F2E8DC] shadow-sm hover:scale-110 transition-transform" onclick="setPaperTone('sepia')" title="Deep Sepia"></button>
+<button class="w-5 h-5 rounded-full bg-[#24221F] shadow-sm hover:scale-110 transition-transform" onclick="setPaperTone('nocturne')" title="Nocturne Reading"></button>
+</div>
+<!-- Type Size Step Buttons -->
+<div class="flex items-center space-x-1 bg-surface-container rounded-lg p-0.5">
+<button class="px-2 py-1 rounded hover:bg-surface-container-lowest font-headline-sm text-sm" onclick="adjustTypeSize(-1)">A-</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container-lowest font-headline-sm text-base font-semibold" onclick="adjustTypeSize(1)">A+</button>
+</div>
+<!-- Appearance Popover Trigger -->
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<!-- SCRIPT: INTERACTION RIG -->
+<script>
+    let currentScale = 1.0;
+    let isBookmarked = false;
+    let currentFontSize = 18;
+
+    function triggerFlipAnimation() {
+      const flipLayer = document.getElementById('flip-layer');
+      if (!flipLayer) return;
+
+      flipLayer.classList.remove('hidden');
+      flipLayer.style.transform = 'rotateY(0deg)';
+      flipLayer.style.transition = 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.55s ease';
+
+      requestAnimationFrame(() => {
+        flipLayer.style.transform = 'rotateY(-180deg)';
+        flipLayer.style.boxShadow = '-20px 20px 50px rgba(0,0,0,0.25)';
+      });
+
+      setTimeout(() => {
+        flipLayer.classList.add('hidden');
+        flipLayer.style.transform = 'none';
+        nextPage();
+      }, 560);
+    }
+
+    function nextPage() {
+      const slider = document.getElementById('folio-slider');
+      let val = parseInt(slider.value, 10);
+      if (val < 319) {
+        val = Math.min(320, val + 2);
+        slider.value = val;
+        onSliderMove(val);
+      }
+    }
+
+    function prevPage() {
+      const slider = document.getElementById('folio-slider');
+      let val = parseInt(slider.value, 10);
+      if (val > 2) {
+        val = Math.max(1, val - 2);
+        slider.value = val;
+        onSliderMove(val);
+      }
+    }
+
+    function onSliderMove(val) {
+      const display = document.getElementById('page-display');
+      const percent = ((val / 320) * 100).toFixed(1);
+      display.textContent = `${percent}% complete`;
+    }
+
+    function toggleBookmark() {
+      isBookmarked = !isBookmarked;
+      const icon = document.getElementById('bookmark-icon');
+      const btn = document.getElementById('bookmark-btn');
+      if (isBookmarked) {
+        icon.textContent = 'bookmark';
+        icon.style.fontVariationSettings = "'FILL' 1";
+        btn.classList.add('text-primary');
+      } else {
+        icon.textContent = 'bookmark_border';
+        icon.style.fontVariationSettings = "'FILL' 0";
+        btn.classList.remove('text-primary');
+      }
+    }
+
+    function adjustScale(delta) {
+      currentScale = Math.min(1.25, Math.max(0.85, currentScale + delta));
+      const container = document.getElementById('spread-container');
+      const indicator = document.getElementById('zoom-indicator');
+      container.style.transform = `scale(${currentScale})`;
+      indicator.textContent = `${Math.round(currentScale * 100)}%`;
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    function adjustTypeSize(delta) {
+      currentFontSize = Math.min(22, Math.max(15, currentFontSize + delta));
+      document.querySelectorAll('.font-reading-body-md').forEach(el => {
+        el.style.fontSize = `${currentFontSize}px`;
+        el.style.lineHeight = `${currentFontSize * 1.72}px`;
+      });
+    }
+
+    function setPaperTone(tone) {
+      const articles = document.querySelectorAll('article');
+      articles.forEach(art => {
+        if (tone === 'cream') {
+          art.style.backgroundColor = '#FAF6EE';
+          art.style.color = '#1D1B18';
+        } else if (tone === 'ivory') {
+          art.style.backgroundColor = '#FFFFFF';
+          art.style.color = '#1A1815';
+        } else if (tone === 'sepia') {
+          art.style.backgroundColor = '#F2E8DC';
+          art.style.color = '#2B2118';
+        } else if (tone === 'nocturne') {
+          art.style.backgroundColor = '#23211E';
+          art.style.color = '#E5DFD7';
+        }
+      });
+    }
+
+    // Keyboard navigation hook
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        triggerFlipAnimation();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevPage();
+      }
+    });
+  </script>
+</div></main></body></html>

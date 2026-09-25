@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Folio — Personal Library</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Literata:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#334c43", "on-background": "#1d1b18", "on-surface": "#1d1b18", "primary": "#994522", "primary-fixed-dim": "#ffb59a", "error": "#ba1a1a", "surface-tint": "#994623", "tertiary-container": "#996e43", "outline-variant": "#dbc1b8", "inverse-primary": "#ffb59a", "on-tertiary-container": "#ffffff", "on-primary-fixed": "#370e00", "background": "#fff8f3", "surface-container-highest": "#e7e1dc", "surface-variant": "#e7e1dc", "on-secondary": "#ffffff", "on-error-container": "#93000a", "on-primary-fixed-variant": "#7b2f0d", "secondary-container": "#cce9dc", "surface-container": "#f3ede7", "surface-container-lowest": "#ffffff", "surface": "#fff8f3", "on-secondary-fixed": "#062018", "primary-fixed": "#ffdbce", "secondary-fixed-dim": "#b1cdc0", "primary-container": "#b85d38", "on-tertiary": "#ffffff", "on-surface-variant": "#55433c", "on-tertiary-fixed-variant": "#623f18", "tertiary-fixed-dim": "#f0bd8b", "error-container": "#ffdad6", "surface-bright": "#fff8f3", "tertiary-fixed": "#ffdcbd", "tertiary": "#7d562d", "on-error": "#ffffff", "secondary-fixed": "#cce9dc", "outline": "#88726b", "surface-container-high": "#ede7e2", "on-primary-container": "#ffffff", "surface-dim": "#dfd9d4", "on-tertiary-fixed": "#2c1600", "on-secondary-container": "#506a60", "inverse-surface": "#32302d", "on-primary": "#ffffff", "inverse-on-surface": "#f6f0ea", "surface-container-low": "#f9f2ed", "secondary": "#4a645a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "3rem", "gutter-mobile": "1rem", "margin": "2rem", "margin-desktop": "4rem", "space-lg": "1.75rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "gutter-desktop": "2.5rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Literata"], "display-lg": ["Literata"], "ui-body-md": ["Geist"], "reading-body-sm": ["Literata"], "headline-md": ["Literata"], "headline-lg-mobile": ["Literata"], "ui-body-sm": ["Geist"], "display-lg-mobile": ["Literata"], "reading-body-lg": ["Literata"], "reading-body-md": ["Literata"], "label-sm": ["Geist"], "label-md": ["Geist"], "headline-sm": ["Literata"] }, fontSize: { "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "ui-body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "reading-body-sm": ["16px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "ui-body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "reading-body-lg": ["21px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }], "reading-body-md": ["18px", { "lineHeight": "32px", "letterSpacing": "0.005em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-ui-body-md text-ui-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm" href="#"><img alt="Folio Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSicC3aVGQxJUi7Ss62mBuC8qTgBcR3A9nlapjSufPDHlNJnosmhsuSp3y4XgF5e8T48BZxf1GqZGdnA0-Wpm-ksN6K7PalH1_z8inZRyOEP3OWLddk5jVZC4U2Yxa-AxM61wdOShbUwTswH_WOeKv4-gyTdwfdhKJSgHC9taDeIIHUTbR2KrykDK60MTlYVnfwxFSia2ppRBhQdkGAgPCVB4BYpAk-1LBxvuZVB_KqM01JxTlzF4vYg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Folio</span></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-label-md"><a aria-current="page" class="px-space-sm py-space-xs rounded-lg transition-colors bg-surface-container text-on-surface font-label-md" data-path="library" href="#">Library</a><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="continue-reading" href="#">Continue Reading</a><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="collections" href="#">Collections</a><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="favorites" href="#">Favorites</a><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="reading-history" href="#">Reading History</a></nav></div><div class="flex-1 max-w-md hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-ui-body-md pointer-events-none">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant placeholder:italic pl-10 pr-12 py-space-xs rounded-lg font-ui-body-sm text-ui-body-sm outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-[0_1px_3px_rgba(28,26,23,0.03)]" placeholder="Search your library or books..." type="search"/><kbd class="absolute right-space-sm font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">⌘K</kbd></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary-container px-space-sm md:px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-ui-body-sm">add</span><span class="hidden sm:inline">Add Book</span></button><button aria-label="Toggle theme" class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">dark_mode</span></button><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBL9o2lPHEHFrXiltNpM6Y_Orh8uz-aTVVN9oCOVBQcBKX_lQ5M088OBqNGGbiTFa5Emt-MmPCZIAsdApJjn8kcFKq4Uk0TS8mw-9L1PCHFi1jRj39v7ndyTN2_iBnVCvaRS6VZs1rsE_5fCpyAEYScBzHgzErRB7t_XbBdtqwH4AjiLz34b1oC3zI9mMuOPo4u9b6rbXHQDG37HBovh6kXRbjb9yU1HasmYFSejXMtCWcO4LTbczH"/></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full relative min-h-[calc(100vh-4rem)]">
+<!-- Subtle Background Library Dashboard (Faded & Ambiently Blurred) -->
+<div class="w-full px-margin-mobile md:px-margin lg:px-margin-desktop py-space-xl opacity-35 filter blur-[3px] pointer-events-none select-none transition-all duration-700">
+<div class="flex items-baseline justify-between mb-space-lg">
+<div>
+<p class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase mb-space-xs">Ex Libris Sanctuarium</p>
+<h2 class="font-display-lg text-display-lg text-on-surface">Curated Reading Room</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">34 Volumes Preserved</span>
+</div>
+</div>
+<!-- Background Bookshelf Grid Silhouette -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-space-md">
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-3/4 bg-surface-variant rounded"></div>
+<div class="h-2 w-1/2 bg-surface-container-highest rounded mt-1"></div>
+</div>
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-2/3 bg-surface-variant rounded"></div>
+<div class="h-2 w-1/3 bg-surface-container-highest rounded mt-1"></div>
+</div>
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-4/5 bg-surface-variant rounded"></div>
+<div class="h-2 w-1/2 bg-surface-container-highest rounded mt-1"></div>
+</div>
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-3/5 bg-surface-variant rounded"></div>
+<div class="h-2 w-2/5 bg-surface-container-highest rounded mt-1"></div>
+</div>
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm hidden md:flex">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-3/4 bg-surface-variant rounded"></div>
+<div class="h-2 w-1/2 bg-surface-container-highest rounded mt-1"></div>
+</div>
+<div class="aspect-[2/3] bg-surface-container-high rounded-xl p-space-sm flex flex-col justify-end shadow-sm hidden lg:flex">
+<div class="w-full h-2/3 bg-surface-container rounded-lg mb-space-xs"></div>
+<div class="h-3 w-2/3 bg-surface-variant rounded"></div>
+<div class="h-2 w-1/3 bg-surface-container-highest rounded mt-1"></div>
+</div>
+</div>
+</div>
+<!-- Focused Modal Overlay Backing -->
+<div class="fixed inset-0 top-16 bg-on-background/25 backdrop-blur-md z-40 flex items-center justify-center p-space-sm sm:p-space-md md:p-space-lg overflow-y-auto">
+<!-- Main Modal Dialog Window -->
+<div class="relative w-full max-w-4xl bg-surface-container-lowest text-on-surface rounded-xl shadow-[0_20px_60px_-15px_rgba(29,27,24,0.18)] my-auto overflow-hidden animate-[fadeIn_0.35s_cubic-bezier(0.16,1,0.3,1)]">
+<!-- Top Archival Trim Ribbon Accent -->
+<div class="h-1.5 w-full bg-gradient-to-r from-primary via-tertiary-container to-secondary"></div>
+<!-- Modal Header -->
+<div class="px-space-md sm:px-space-lg pt-space-lg pb-space-md flex items-start justify-between gap-space-md bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-label-sm tracking-wider uppercase">Folio Ingestion</span>
+<span class="font-label-sm text-label-sm text-tertiary">#INV-8492</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Add a new book</h1>
+<p class="font-reading-body-sm text-reading-body-sm text-on-surface-variant mt-1 max-w-xl">
+            Upload your manuscript or archival PDF. Folio parses typographical structures, reconstructs table of contents, and renders high-definition leaves.
+          </p>
+</div>
+<button aria-label="Dismiss ingestion panel" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-headline-sm">close</span>
+</button>
+</div>
+<!-- Main Modal Body: Split Architectural Layout -->
+<div class="px-space-md sm:px-space-lg pb-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Ingestion Engine & Processing Tracker (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- State 1: Micro Dropzone / Re-upload zone -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md hover:bg-surface-container transition-all cursor-pointer shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-headline-md">upload_file</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Drop alternative manuscript</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Browse storage</span>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant truncate">Compatible with PDF, EPUB, & DJVU up to 150 MB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-ui-body-md">add_circle</span>
+</div>
+</div>
+<!-- State 2: Active Real-Time Processing Card -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm">
+<!-- File Info Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-headline-sm">menu_book</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Thinking, Fast and Slow</p>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Daniel Kahneman</span>
+<span>•</span>
+<span>24.8 MB PDF</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary bg-primary-fixed px-2 py-0.5 rounded-full">
+                82%
+              </span>
+</div>
+<!-- Warm Terracotta Progressive Meter -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mb-space-md">
+<div class="h-full bg-gradient-to-r from-primary-container via-primary to-surface-tint rounded-full transition-all duration-500 ease-out" style="width: 82%;"></div>
+</div>
+<!-- Step Verification Checklist -->
+<div class="space-y-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-inner">
+<!-- Step 1: Complete -->
+<div class="flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-ui-body-sm font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Binary payload uploaded safely</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">100%</span>
+</div>
+</div>
+<!-- Step 2: Complete -->
+<div class="flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-ui-body-sm font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Metadata & chapters parsed</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Verified</span>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">499 Pages • 38 Chapters identified</p>
+</div>
+</div>
+<!-- Step 3: Active In-Progress -->
+<div class="flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 mt-0.5 animate-pulse">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">Extracting vector cover art</span>
+<span class="font-label-sm text-label-sm text-primary animate-pulse">Active</span>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Synthesizing high-density spine & deckle edge tone</p>
+</div>
+</div>
+<!-- Step 4: Queued -->
+<div class="flex items-start gap-space-sm opacity-55">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-ui-body-sm">hourglass_empty</span>
+</div>
+<div class="flex-1 min-w-0 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Generating reader flipbook cache</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Queued</span>
+</div>
+</div>
+</div>
+<!-- Warm Status Footnote -->
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-ui-body-sm text-tertiary">auto_awesome</span>
+<p class="font-ui-body-sm text-ui-body-sm italic">Almost ready to read — rendering typography leaves.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Auto-Detected Cataloguing & Shelf Placement (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-low p-space-md sm:p-space-lg rounded-xl">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Shelf Placement</h2>
+<span class="font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded">Auto-Catalog</span>
+</div>
+<!-- Detected Cover Art Mock Preview -->
+<div class="flex gap-space-md items-center p-space-sm bg-surface-container-lowest rounded-lg shadow-sm">
+<div class="relative w-16 h-22 aspect-[2/3] bg-tertiary-container text-on-tertiary-container rounded shadow-md overflow-hidden shrink-0 flex flex-col justify-between p-1.5">
+<span class="font-label-sm text-[9px] uppercase tracking-wider opacity-80">Farrar, Straus</span>
+<span class="font-headline-sm text-[10px] leading-tight font-bold line-clamp-3">Thinking, Fast and Slow</span>
+<span class="font-label-sm text-[8px] opacity-90 truncate">Kahneman</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Target Format</p>
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Full Folio Spread</p>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Two-page archival layout</p>
+</div>
+</div>
+<!-- Auto-extracted Fields Form -->
+<div class="space-y-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Catalog Title</label>
+<div class="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-reading-body-sm text-reading-body-sm text-on-surface shadow-inner">
+                  Thinking, Fast and Slow
+                </div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Author</label>
+<div class="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-ui-body-md text-ui-body-md text-on-surface shadow-inner">
+                  Daniel Kahneman
+                </div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Curated Collections</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                    Psychology
+                    <span class="material-symbols-outlined text-label-sm cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                    Non-Fiction
+                    <span class="material-symbols-outlined text-label-sm cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">
+                    Behavioral Science
+                    <span class="material-symbols-outlined text-label-sm cursor-pointer hover:text-error">close</span>
+</span>
+<button class="inline-flex items-center gap-0.5 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-label-sm">add</span> Tag
+                  </button>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Pacing Intention</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-1.5 px-3 rounded-lg text-left bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-between shadow-sm" type="button">
+<span>25 pages / day</span>
+<span class="material-symbols-outlined text-ui-body-sm text-primary">check_circle</span>
+</button>
+<button class="py-1.5 px-3 rounded-lg text-left bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-between" type="button">
+<span>Deep Study</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dialog Actions -->
+<div class="pt-space-md mt-space-md flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+              Cancel
+            </button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-md transition-all active:scale-[0.98]" type="button">
+<span>Start Reading Immediately</span>
+<span class="material-symbols-outlined text-ui-body-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Drawer Sub-Footer with Security & Storage Guarantee -->
+<div class="bg-surface-container-high px-space-md sm:px-space-lg py-2.5 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-space-xs font-ui-body-sm text-ui-body-sm">
+<span class="material-symbols-outlined text-label-md text-secondary">encrypted</span>
+<span>Zero-knowledge client-side decryption applied • Encrypted storage</span>
+</div>
+<span class="font-label-sm text-label-sm">Folio PDF Engine v4.2</span>
+</div>
+</div>
+</div>
+<!-- Ambient Floating Toast Notification (Bottom Right) -->
+<div class="fixed bottom-6 right-6 z-50 animate-[slideUp_0.4s_ease-out]">
+<div class="flex items-center gap-space-sm px-space-md py-space-sm bg-inverse-surface text-inverse-on-surface rounded-xl shadow-xl">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-ui-body-sm">done_all</span>
+</div>
+<div class="flex flex-col">
+<p class="font-ui-body-sm text-ui-body-sm font-medium">Progress auto-saved</p>
+<p class="font-label-sm text-label-sm opacity-80">“Atomic Habits” — Bookmarked at Page 127</p>
+</div>
+<button class="ml-space-xs text-inverse-on-surface opacity-60 hover:opacity-100 transition-opacity" onclick="this.parentElement.remove()" type="button">
+<span class="material-symbols-outlined text-ui-body-md">close</span>
+</button>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="w-full px-margin-mobile md:px-margin lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Folio</span><span class="text-on-surface-variant font-ui-body-sm text-ui-body-sm">— An archival sanctuary for discerning readers</span></div><div class="flex items-center gap-space-lg"><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Ex Libris Catalog</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Reading Preferences</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Archival Notes</a></div></div></footer></body></html>

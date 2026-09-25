@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Folio — Personal Library</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Literata:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#4a645a", "primary-container": "#b85d38", "tertiary-fixed": "#ffdcbd", "on-surface-variant": "#55433c", "tertiary-fixed-dim": "#f0bd8b", "surface": "#fff8f3", "surface-container-highest": "#e7e1dc", "secondary-fixed": "#cce9dc", "inverse-on-surface": "#f6f0ea", "surface-bright": "#fff8f3", "primary-fixed": "#ffdbce", "surface-dim": "#dfd9d4", "background": "#fff8f3", "surface-container": "#f3ede7", "secondary-container": "#cce9dc", "error": "#ba1a1a", "inverse-surface": "#32302d", "inverse-primary": "#ffb59a", "on-tertiary-fixed-variant": "#623f18", "surface-tint": "#994623", "on-secondary-fixed-variant": "#334c43", "surface-container-high": "#ede7e2", "on-primary": "#ffffff", "secondary-fixed-dim": "#b1cdc0", "tertiary-container": "#996e43", "on-primary-container": "#ffffff", "primary": "#994522", "tertiary": "#7d562d", "on-error-container": "#93000a", "outline": "#88726b", "surface-variant": "#e7e1dc", "error-container": "#ffdad6", "on-primary-fixed-variant": "#7b2f0d", "on-secondary": "#ffffff", "on-tertiary-container": "#ffffff", "on-secondary-container": "#506a60", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb59a", "on-surface": "#1d1b18", "surface-container-low": "#f9f2ed", "on-secondary-fixed": "#062018", "on-background": "#1d1b18", "surface-container-lowest": "#ffffff", "outline-variant": "#dbc1b8", "on-error": "#ffffff", "on-tertiary-fixed": "#2c1600", "on-primary-fixed": "#370e00" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "space-xs": "0.25rem", "margin": "2rem", "gutter-desktop": "2.5rem", "space-lg": "1.75rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-xl": "3rem", "space-md": "1rem", "margin-desktop": "4rem" }, fontFamily: { "reading-body-sm": ["Literata"], "headline-md": ["Literata"], "label-md": ["Geist"], "ui-body-md": ["Geist"], "label-sm": ["Geist"], "ui-body-sm": ["Geist"], "display-lg-mobile": ["Literata"], "reading-body-md": ["Literata"], "headline-lg-mobile": ["Literata"], "reading-body-lg": ["Literata"], "display-lg": ["Literata"], "headline-sm": ["Literata"], "headline-lg": ["Literata"] }, fontSize: { "reading-body-sm": ["16px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "ui-body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "ui-body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "reading-body-md": ["18px", { "lineHeight": "32px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "reading-body-lg": ["21px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-ui-body-md text-ui-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm" href="#"><img alt="Folio Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSicC3aVGQxJUi7Ss62mBuC8qTgBcR3A9nlapjSufPDHlNJnosmhsuSp3y4XgF5e8T48BZxf1GqZGdnA0-Wpm-ksN6K7PalH1_z8inZRyOEP3OWLddk5jVZC4U2Yxa-AxM61wdOShbUwTswH_WOeKv4-gyTdwfdhKJSgHC9taDeIIHUTbR2KrykDK60MTlYVnfwxFSia2ppRBhQdkGAgPCVB4BYpAk-1LBxvuZVB_KqM01JxTlzF4vYg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Folio</span></a><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-label-md"><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="home" href="#">Home</a><a aria-current="page" class="px-space-sm py-space-xs rounded-lg transition-colors bg-surface-container text-on-surface font-label-md" data-path="library" href="#">Library</a><a class="px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="annotations" href="#">Annotations</a></nav></div><div class="flex-1 max-w-md hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-ui-body-md pointer-events-none">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant placeholder:italic pl-10 pr-12 py-space-xs rounded-lg font-ui-body-sm text-ui-body-sm outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-[0_1px_3px_rgba(28,26,23,0.03)]" placeholder="Search your library, notes, or books..." type="search"/><kbd class="absolute right-space-sm font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">⌘K</kbd></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary-container px-space-sm md:px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-ui-body-sm">add</span><span class="hidden sm:inline">Add Book</span></button><button aria-label="Toggle theme" class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">dark_mode</span></button><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="pl-space-xs"><img alt="User avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBL9o2lPHEHFrXiltNpM6Y_Orh8uz-aTVVN9oCOVBQcBKX_lQ5M088OBqNGGbiTFa5Emt-MmPCZIAsdApJjn8kcFKq4Uk0TS8mw-9L1PCHFi1jRj39v7ndyTN2_iBnVCvaRS6VZs1rsE_5fCpyAEYScBzHgzErRB7t_XbBdtqwH4AjiLz34b1oC3zI9mMuOPo4u9b6rbXHQDG37HBovh6kXRbjb9yU1HasmYFSejXMtCWcO4LTbczH"/></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Top Archival Navigation & Header Bar -->
+<section class="w-full px-margin-mobile md:px-margin lg:px-margin-desktop py-space-md md:py-space-lg flex flex-col gap-space-md">
+<!-- Breadcrumb & Control Level -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">EX LIBRIS</span>
+<span class="text-outline-variant text-ui-body-sm font-ui-body-sm">/</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">Personal Archive · Elena’s Library</h1>
+<div class="flex items-center gap-space-xs ml-0 md:ml-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">24 Volumes</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">5 Curated Shelves</span>
+</div>
+</div>
+<!-- View and Sort Controls -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<div class="inline-flex p-1 bg-surface-container rounded-lg">
+<button class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md" id="view-grid-btn" title="Grid View">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span class="hidden sm:inline">Shelves</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-sm py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" id="view-list-btn" title="List View">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+<span class="hidden sm:inline">Index</span>
+</button>
+</div>
+<div class="relative">
+<button class="flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-sm py-1.5 rounded-lg font-label-md text-label-md transition-colors" id="sort-trigger">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sort</span>
+<span>Recently Opened</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Collection Filter Ribbon Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-sm">
+        All Volumes (24)
+      </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors">
+        Psychology &amp; Human Behavior (6)
+      </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors">
+        Philosophy &amp; Mind (4)
+      </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors">
+        Systems &amp; Architecture (5)
+      </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors">
+        Design &amp; Typography (4)
+      </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors">
+        Economics &amp; Wealth (5)
+      </button>
+<button class="shrink-0 flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-lowest text-primary hover:bg-primary-fixed transition-colors font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>New Shelf</span>
+</button>
+</div>
+<!-- Inline Filter & Status Docket -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md flex-1">
+<div class="relative flex-1 max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">filter_list</span>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant placeholder:italic pl-10 pr-4 py-2 rounded-lg font-ui-body-sm text-ui-body-sm outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="Filter title, author, or marginal note..." type="text"/>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>Reading Focus: Chapter 4 of The Psychology of Money</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm justify-end">
+<span class="font-label-sm text-label-sm text-outline uppercase hidden sm:inline">Shelved as:</span>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Hardcover &amp; Folios</span>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md p-1.5 rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="hidden sm:inline">Preferences</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Curated Collection Shelves Container -->
+<main class="w-full px-margin-mobile md:px-margin lg:px-margin-desktop flex flex-col gap-space-xl pb-space-xl">
+<!-- COLLECTION 1: Psychology & Behavioral Economics (Spotlight) -->
+<section class="flex flex-col gap-space-md">
+<!-- Collection Shelf Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Shelf 01 · Active Inquiries</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Psychology &amp; Behavioral Economics</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">6 volumes · 42 notes transcribed</span>
+<button class="text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-0.5">
+<span>Shelf details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Books Row with Physical Book Presentation -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Book 1: Spotlight (The Psychology of Money) -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-highest shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<!-- Archival Spine Crease Shadow -->
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<!-- Cover image using required ID -->
+<img alt="The Psychology of Money by Morgan Housel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83XCN0I5fw2-Ih10I4tUhVYBgAyWRv5KoQobMyrZ21gC80uvN8Gkl2juaiX3ybP29qKLjJREMs_MV6-OQ86n5qCeQLk7ZegNZ_vFDVRKfMDKgKXADlRkjZV9Go06ACJwu2HG1Fysd6zzUIn2K_uyPq8N-J1bRT012DfNKn9nTDqDm6rAP-0LuQp2J_xW2GV8RiWKcP9L7bsByL4ezy1REyMpoPW79hVulaXivi8nX0daE0BJVF9O2a38WPIvh9V-lZw"/>
+<!-- In Progress Badge -->
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-md">Reading · 78%</span>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>34 Notes</span>
+</button>
+</div>
+</div>
+<!-- Metadata & Reading Progress -->
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">The Psychology of Money</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded" title="Shelf options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Morgan Housel · <span class="italic font-reading-body-sm">2020</span></p>
+<!-- Tactile Progress Bar -->
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>p. 192 of 242</span>
+<span class="flex items-center gap-0.5 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">bookmark</span> 3 bookmarks
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book 2: Atomic Habits -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Minimalist elegant archival book cover for Atomic Habits by James Clear. Clean ivory textured cloth background with warm terracotta stamped typography and small concentric geometric circles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfe4YRMfj908Yk1_i_2SxNF2w7uNWJLKmAHOTzB3REaV0pwj_o1UJdApAdihYbKcZ4rQXEBQBYe44tQISEKQjhQhymjdAT3aPnxipdvaTHmXj4cAx6CjuTSBcnhW1ZdEH9EWgdmdgI5eQ6abXgV_Ylqbc25-sbC-4UZpv6dQM5DUz5qOPr5K0QatAIqQnkcB0iMdBObzIo9s9kEexeQ8kRRabd5_t3BKRVr68wNQMIJqwVOUWXeBKg"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm shadow-md">Completed</span>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Review Folio</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>52 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Atomic Habits</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">James Clear · <span class="italic font-reading-body-sm">2018</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>320 / 320 pp</span>
+<span class="flex items-center gap-0.5 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">star</span> 5.0 Rating
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book 3: Thinking, Fast and Slow -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Refined vintage book cover of Thinking Fast and Slow by Daniel Kahneman. Muted sage green linen paper textured jacket with classic embossed serif title lettering and archival gold foil accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAVQJjyFXa9-5c3_2zG2Qt1V_Q00qF4dg0br_YybRaunZyge_lczej33T0149hiSTBWcbItuoyJt9HTPS1TLPLDlvGb43A0As9JxyKlf57A98z7O0qAzy5_nfVeKJBGq4ugnOpjNIkfIhqrmwtBsABunguWSJ9-pH3R8Hyc3OUt6281vf1Dzo0FjpMf55n8D4HRKmicGdS9g3oqg93ErUz7WE6dJEP68cvBWvuhNQ6BKk6H9TTw8FX"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm shadow-md">Reading · 45%</span>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Continue Reading</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>18 Annotations</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Thinking, Fast and Slow</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Daniel Kahneman · <span class="italic font-reading-body-sm">2011</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>p. 224 of 499</span>
+<span class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[14px]">history</span> 2d ago
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book 4: Influence: The Psychology of Persuasion -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Scholarly book cover of Influence by Robert Cialdini. Archival parchment tones with warm terracotta trim, antique library stamp styling, and subtle letterpress texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmHwYpzoXyx2M-fNQncbHVlyvup6spRO5FLe32Q3D1xRqasQCaN7ENuKJK7qrb17wPSRmfQ4tLtlp4n3ysbJksDlw12ybebg9o-MO9K_sg-QwlkrKaAVhrZGf11uFfI-oZqzEEcp91Mer7KVKEgQzXPBgncl-LXXGYpU1VB38iQn_oLEP6adrs0jSW3sIhaOQPnPI4Wf3muj1IzUl1DearCR-bZoq7EBkzhlKlukHXL4EmtDAsyQD4"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-md">Queued</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Begin Volume</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+<span>Shelf Setup</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Influence</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Robert B. Cialdini · <span class="italic font-reading-body-sm">1984</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline-variant h-full rounded-full" style="width: 4%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>Unread · 336 pp</span>
+<span class="text-tertiary font-medium">New Edition</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Wooden / Parchment Shelf Base Trim Line -->
+<div class="w-full h-1.5 bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container rounded-full shadow-inner mt-2"></div>
+</section>
+<!-- COLLECTION 2: Philosophy & Mind -->
+<section class="flex flex-col gap-space-md pt-space-md">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">filter_vintage</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Shelf 02 · Dialectics &amp; Stoicism</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Philosophy &amp; Mind</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">4 volumes · 89 quotes preserved</span>
+<button class="text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-0.5">
+<span>Shelf details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Book: Meditations -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Antique dark forest green leather-bound book cover for Meditations by Marcus Aurelius. Classical Roman gold leaf embossed title, blind debossed border, and natural archival patina." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAG8RHQs3gw3XxzCeNO9-wcWYdAXD8HknuBWOxVP9BfqrDKqIYu568niZhLptVqn5iIiNFmDkAMd-9NT7qEkurQu7jlYDmOlCFHgOVHcqxJ8IZVo-tOQr4_YpQwEQLGGXbiCuPd8wP5f33QyA7Kf2K8WDShXedQpjt4Yj6soQIV7JRh9K9USITLo06C8P_-EaUSmFiK7qf0q98XL5F0xLNXiLL8f5D5QJBVWux6ffbURSyvBOFEFLp"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm shadow-md">Finished</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>41 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Meditations</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Marcus Aurelius · <span class="italic font-reading-body-sm">Hays Translation</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>Completed · Read 3x</span>
+<span class="text-secondary font-medium">Favorite</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book: Gödel, Escher, Bach -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of Godel Escher Bach by Douglas Hofstadter. Intricate black ink geometric woodcut optical illusion illustrations over warm beige handmade rag paper with scholarly typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAICWGQTnITDGJNwmfNz_SqCvqXZw1VXR3AIqMadY7QZByxJ4OV7nboPnltXDisFCbZZLH2wRVcT5XrRdgVv1cZ9KG341WWb3t-J-tWmfBwy-kVgQbK3X9SsGPMjrMUynoTQ-3jged5-Yw4E981-Vs7TTQ4zb0JBaMryTk_fNJAswX13-yi53OFDdoG67nQr05b7BHhMmXK8hECffxAuWhUpntn5vsIjSouqY_hoTu-mRiD9Vr3VUNa"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-md">Reading · 31%</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Continue Reading</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>27 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Gödel, Escher, Bach</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Douglas Hofstadter · <span class="italic font-reading-body-sm">1979</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 31%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>p. 240 of 777</span>
+<span class="text-primary font-medium">Vol. I</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book: The Courage to be Disliked -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of The Courage to be Disliked by Ichiro Kishimi and Fumitake Koga. Minimalist Japanese book design with deep indigo blue background, subtle organic paper texture, and clean red seal stamp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEi1oNkXucYIuN6zLmwPUXXTFN5my4pDq8UdUtFJdERSHZsuRqiy-CV0Fq0g2ILjQ0Y2_x1EXPCo07lT0zgjwWCvWdK462TwJmlUUURF6fyD3MuC_GiZMZXzWhy3jtOTyTIXKjJ1quSpMTOxaho9Q3ALdZqIRjh5NCg-UZgvG__uXR2gc2mQcdbrTMFPYXlu6LB7Yy8KwMp8Et2sHZRRihpeiX4CmPjn0Pv0do5zC0Vy5Ydm243sZE"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm shadow-md">Finished</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>21 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">The Courage to Be Disliked</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Ichiro Kishimi, Fumitake Koga</p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>Completed · 288 pp</span>
+<span class="text-secondary font-medium">Adlerian</span>
+</div>
+</div>
+</div>
+</article>
+<!-- New Book Addition Slot in Collection -->
+<div class="flex flex-col items-center justify-center rounded-xl bg-surface-container-low p-space-lg text-center shadow-sm hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high group-hover:bg-primary-fixed flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors shadow-inner mb-space-sm">
+<span class="material-symbols-outlined text-[28px]">library_add</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Add Volume to Mind</h4>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant mt-1 max-w-[200px]">Import EPUB, PDF, or bind from Ex Libris index</p>
+<span class="mt-4 px-3 py-1 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">
+            Select Manifest
+          </span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container rounded-full shadow-inner mt-2"></div>
+</section>
+<!-- COLLECTION 3: Design & Systems Engineering -->
+<section class="flex flex-col gap-space-md pt-space-md">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">layers</span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">Shelf 03 · Structural Craft</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Design &amp; Systems Engineering</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">5 volumes · 61 marginalia</span>
+<button class="text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-0.5">
+<span>Shelf details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Book: The Design of Everyday Things -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of The Design of Everyday Things by Don Norman. Archival terracotta and parchment book cloth with iconic silhouette of an impossible teapot handle and stark Swiss modernist typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtvd2zkxUnZ-sJOjEGvsp23uIEdd8QewVxb5X6eJJfoanU307kwZ9tWeo09ModjTtJaqNuH_p_ce_BLkm74rLkgHjVhuIXL-7qmyJ4wB3QzMRq_2YtB4YA_OBu6K3NTYv9mQE7dbm-oOx2XVUWgQYrFrr3kTFhYEOSJZ8PgR-1fl6EP5tBu9B4jjZrKz3f9fvrMOQJAIndSAOyaIPRdRh-3tyEmq-oxiX5ijWRlaIsaUJ4WzuAV92S"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm shadow-md">Finished</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>38 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">The Design of Everyday Things</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Don Norman · <span class="italic font-reading-body-sm">Revised Edition</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>Completed · 368 pp</span>
+<span class="text-secondary font-medium">Core Catalog</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book: Designing Data-Intensive Applications -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of Designing Data-Intensive Applications by Martin Kleppmann. Antique scientific field manual aesthetic with delicate vintage engraving of an Indian wild boar, off-white rag paper texture and clean typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcwMIq3yGOT94t5enxHUiVE6g-Jx-BEfNcb9KN4VupB_lMiNAsXsCHBhW-asaa67p-z8MSFrmdbhNLtmIJDUtlfMPHWyNn9qcRcRJeTH3zIabcqCkQD1hsKPOuLWL1tDcHbpYIyzh5dKO7-L55Bceb_KdYShLG80xDu0JFQB8nprrwU6xU5DT79-U1RxJYOnDtTeTEByNIBtIitiigH7H1wyRBFwMjitRLg2RTkBYKlThP4RDd_Zvi"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-md">Reading · 64%</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Resume Reading</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>49 Annotations</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Designing Data-Intensive Apps</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Martin Kleppmann · <span class="italic font-reading-body-sm">2017</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 64%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>p. 394 of 616</span>
+<span class="text-primary font-medium">Ch. 9 · Consensus</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book: The Structure of Scientific Revolutions -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of The Structure of Scientific Revolutions by Thomas Kuhn. Deep terracotta-ochre bound cloth cover with mid-century academic typography, gold foil stamping, and warm library shelf lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2yH_8BTOMq02dYMuEw87UotNu3OOfjF0XL5uuVxl-aiNZCJzA58MI8wbRkjlCRM33RAf8qjwfrXLekYwwZpM7C7zYF909JHlE1CWXJyWNGicmnYlCNH25zKuEHwf2G3HJtyJOGy7YtlbMXK7_t75gpAVLEUNAb7obNZ00A56KW6nRNRbEiDpw0Ve_w_RXIiLHSTlHDZaAtMUedt2A_uQKzidR3UgIKKX1BsOXslM7XJxPPxgUTvGG"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm shadow-md">Archival Edition</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>15 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Scientific Revolutions</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Thomas S. Kuhn · <span class="italic font-reading-body-sm">50th Anniv.</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>Completed · 264 pp</span>
+<span class="text-secondary font-medium">Paradigm Shifts</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Book: The Elements of Typographic Style -->
+<article class="group relative flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-high shadow-md group-hover:-translate-y-1.5 transition-transform duration-300">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of The Elements of Typographic Style by Robert Bringhurst. Severe typographic mastery on deckle-edge bone white paper with subtle Venetian red rubrication and lead type letterpress impressions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNNUjT4pcjSeGoMV6KIBa8vyQiu0b4Kmd5IPMer6aOffOa2EFv6XfpB2KSBHPENh5IZP23xyrqU_5_VINhBa2kL__K4Szfzy9zLC0BQ3r3DIZ9VKcptleqfU6pEv8WHDrsun3DV3lA67IHy4n63TBzOzYSHU_OXhAeHlC_Yalrp3HVBGcypypvsDNcVt4_3LvdL4xiP_nYt2vBKgXmeFD4sjrkpZbHkldXFcsKgTnn030rZQ5vQFH6"/>
+<div class="absolute top-2.5 right-2.5 z-20">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-md">Reading · 92%</span>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 flex flex-col items-center justify-center gap-2.5 p-4 text-center">
+<button class="w-full py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md shadow-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Open Reader</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>46 Notes</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 mt-space-sm">
+<div class="flex items-baseline justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">The Elements of Typographic Style</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-ui-body-sm text-ui-body-sm text-on-surface-variant">Robert Bringhurst · <span class="italic font-reading-body-sm">Version 4.0</span></p>
+<div class="w-full mt-2 flex flex-col gap-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>p. 328 of 352</span>
+<span class="text-primary font-medium">Nearly Finished</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div class="w-full h-1.5 bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container rounded-full shadow-inner mt-2"></div>
+</section>
+</main>
+<!-- Quick Archival Stats & Metadata Footer Docket -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin lg:px-margin-desktop py-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Metrics Sparkline & Statistics -->
+<div class="flex flex-wrap items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-highest text-tertiary">
+<span class="material-symbols-outlined text-[20px]">shelves</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Library Totals</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">24 Volumes · 5 Shelves</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-secondary-container text-secondary">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Reading Immersion</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">142.5 Archival Hours</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<!-- Mini Progress Donut SVG -->
+<svg class="w-9 h-9 -rotate-90 text-primary-container" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="68, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Active Completion</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">16 / 24 Bound Read</span>
+</div>
+</div>
+</div>
+<!-- Sync Status & Catalog Health -->
+<div class="flex items-center gap-space-md self-end lg:self-auto text-on-surface-variant font-ui-body-sm text-ui-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span>Folio Cloud Vault Synced · 3 min ago</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md transition-colors" title="Export library catalog index">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export BibTeX / JSON</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive script for switching View Toggles -->
+<script>
+    (function() {
+      const gridBtn = document.getElementById('view-grid-btn');
+      const listBtn = document.getElementById('view-list-btn');
+
+      if (gridBtn && listBtn) {
+        listBtn.addEventListener('click', function() {
+          listBtn.classList.remove('text-on-surface-variant');
+          listBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          gridBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          gridBtn.classList.add('text-on-surface-variant');
+        });
+
+        gridBtn.addEventListener('click', function() {
+          gridBtn.classList.remove('text-on-surface-variant');
+          gridBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          listBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          listBtn.classList.add('text-on-surface-variant');
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="w-full px-margin-mobile md:px-margin lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Folio</span><span class="text-on-surface-variant font-ui-body-sm text-ui-body-sm">— An archival sanctuary for discerning readers</span></div><div class="flex items-center gap-space-lg"><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Ex Libris Catalog</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Reading Preferences</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Archival Notes</a></div></div></footer></body></html>
