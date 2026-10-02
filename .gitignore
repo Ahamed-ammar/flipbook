@@ -5,6 +5,8 @@ frontend/.env
 frontend/.env.local
 
 # Java / Maven
+backend/.env
+backend/.env.local
 backend/target/
 backend/.mvn/
 *.class
