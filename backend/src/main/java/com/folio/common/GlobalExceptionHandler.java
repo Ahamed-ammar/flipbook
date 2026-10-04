@@ -62,6 +62,13 @@ public class GlobalExceptionHandler {
                 .body(ApiError.of("File exceeds the maximum allowed size of 150 MB.", 413));
     }
 
+    @ExceptionHandler(java.io.UncheckedIOException.class)
+    public ResponseEntity<ApiError> handleUncheckedIO(java.io.UncheckedIOException ex) {
+        log.error("Storage IO error: {}", ex.getMessage(), ex);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ApiError.of("File storage error: " + ex.getCause().getMessage(), 500));
+    }
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiError> handleIllegalArg(IllegalArgumentException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -70,8 +77,9 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiError> handleGeneric(Exception ex) {
-        log.error("Unhandled exception: {}", ex.getMessage(), ex);
+        log.error("Unhandled exception [{}]: {}", ex.getClass().getSimpleName(), ex.getMessage(), ex);
+        String msg = ex.getMessage() != null ? ex.getMessage() : ex.getClass().getSimpleName();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ApiError.of("An unexpected error occurred.", 500));
+                .body(ApiError.of(msg, 500));
     }
 }
