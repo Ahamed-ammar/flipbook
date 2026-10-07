@@ -8,6 +8,9 @@ public interface StorageService {
     /** Store a file and return its relative URL path. */
     String store(MultipartFile file, String subDir, String fileName);
 
+    /** Store from a Path (temp file) — streams without heap copy. */
+    String storeFromPath(Path source, String subDir, String fileName);
+
     /** Store raw bytes and return relative URL path. */
     String storeBytes(byte[] bytes, String subDir, String fileName, String contentType);
 

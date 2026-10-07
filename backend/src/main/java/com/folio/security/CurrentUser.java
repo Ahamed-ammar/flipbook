@@ -9,5 +9,5 @@ import java.lang.annotation.*;
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : Long.parseLong(name)")
+@AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : T(java.lang.Long).parseLong(username)")
 public @interface CurrentUser {}

@@ -50,9 +50,11 @@ public class BookController {
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<BookDto> upload(
             @RequestPart("file") MultipartFile file,
+            @RequestParam(value = "title",  required = false) String title,
+            @RequestParam(value = "author", required = false) String author,
             @CurrentUser Long userId
     ) throws IOException {
-        BookDto book = bookService.upload(file, userId);
+        BookDto book = bookService.upload(file, title, author, userId);
         return ResponseEntity.status(201).body(book);
     }
 

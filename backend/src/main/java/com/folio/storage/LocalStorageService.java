@@ -15,7 +15,7 @@ public class LocalStorageService implements StorageService {
 
     private final Path basePath;
 
-    public LocalStorageService(@Value("${folio.storage.local-path:./uploads}") String storagePath) {
+    public LocalStorageService(@Value("${folio.storage.local.path:./uploads}") String storagePath) {
         this.basePath = Paths.get(storagePath).toAbsolutePath().normalize();
         try {
             Files.createDirectories(basePath);
@@ -34,6 +34,19 @@ public class LocalStorageService implements StorageService {
             return "/files/" + subDir + "/" + fileName;
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to store file: " + fileName, e);
+        }
+    }
+
+    @Override
+    public String storeFromPath(Path source, String subDir, String fileName) {
+        try {
+            Path dir  = basePath.resolve(subDir);
+            Files.createDirectories(dir);
+            Path dest = dir.resolve(fileName);
+            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
+            return "/files/" + subDir + "/" + fileName;
+        } catch (IOException e) {
+            throw new UncheckedIOException("Failed to store file from path: " + fileName, e);
         }
     }
 
