@@ -36,7 +36,7 @@ export default function Reader() {
     spreadMode,  toggleSpreadMode,
     isFullscreen, setFullscreen,
     paperTone,   setPaperTone,
-    fontSize,    adjustFontSize,
+    fontSize,    setFontSize,
     bookmarkedPages, setBookmarkedPages, addBookmarkedPage, removeBookmarkedPage,
     reset,
   } = useReaderStore()

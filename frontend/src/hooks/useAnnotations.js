@@ -28,27 +28,27 @@ export function useHighlights(bookId) {
 
 export function useCreateHighlight(bookId) {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastError = useToastStore((s) => s.error)
   return useMutation({
     mutationFn: (data) => annotationService.createHighlight(bookId, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['highlights', bookId] })
       queryClient.invalidateQueries({ queryKey: ['annotations'] })
     },
-    onError: (e) => toast.error(getErrorMessage(e)),
+    onError: (e) => toastError(getErrorMessage(e)),
   })
 }
 
 export function useDeleteHighlight(bookId) {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastError = useToastStore((s) => s.error)
   return useMutation({
     mutationFn: (highlightId) => annotationService.deleteHighlight(highlightId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['highlights', bookId] })
       queryClient.invalidateQueries({ queryKey: ['annotations'] })
     },
-    onError: (e) => toast.error(getErrorMessage(e)),
+    onError: (e) => toastError(getErrorMessage(e)),
   })
 }
 
@@ -62,27 +62,27 @@ export function useBookmarks(bookId) {
 
 export function useCreateBookmark(bookId) {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastError = useToastStore((s) => s.error)
   return useMutation({
     mutationFn: (data) => annotationService.createBookmark(bookId, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['bookmarks', bookId] })
       queryClient.invalidateQueries({ queryKey: ['annotations'] })
     },
-    onError: (e) => toast.error(getErrorMessage(e)),
+    onError: (e) => toastError(getErrorMessage(e)),
   })
 }
 
 export function useDeleteBookmark(bookId) {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastError = useToastStore((s) => s.error)
   return useMutation({
     mutationFn: (bookmarkId) => annotationService.deleteBookmark(bookmarkId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['bookmarks', bookId] })
       queryClient.invalidateQueries({ queryKey: ['annotations'] })
     },
-    onError: (e) => toast.error(getErrorMessage(e)),
+    onError: (e) => toastError(getErrorMessage(e)),
   })
 }
 

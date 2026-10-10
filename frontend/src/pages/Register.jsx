@@ -25,7 +25,7 @@ export default function Register() {
     setLoading(true)
     try {
       const data = await authService.register(form.name, form.email, form.password)
-      setAuth(data.token, data.user)
+      setAuth(data.user, data.token)
       navigate('/home')
     } catch (err) {
       setError(err?.response?.data?.message ?? 'Registration failed. Please try again.')

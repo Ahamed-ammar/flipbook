@@ -13,7 +13,7 @@ function formatDate(dateStr) {
 
 function useDeleteAnnotation() {
   const qc = useQueryClient()
-  const toast = useToastStore()
+  const addToast = useToastStore((s) => s.error)
   return async (annotation, onDelete) => {
     try {
       if (annotation.type === 'highlight') {
@@ -26,7 +26,7 @@ function useDeleteAnnotation() {
       qc.invalidateQueries({ queryKey: ['bookmarks', annotation.bookId] })
       onDelete?.(annotation.id, annotation.type)
     } catch {
-      toast.error('Failed to delete annotation')
+      addToast('Failed to delete annotation')
     }
   }
 }

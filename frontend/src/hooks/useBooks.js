@@ -27,7 +27,8 @@ export function useBook(bookId) {
 
 export function useUploadBook() {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastSuccess = useToastStore((s) => s.success)
+  const toastError = useToastStore((s) => s.error)
 
   return useMutation({
     mutationFn: ({ formData, onProgress }) =>
@@ -35,27 +36,28 @@ export function useUploadBook() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books'] })
       queryClient.invalidateQueries({ queryKey: ['home'] })
-      toast.success('Book added to your library')
+      toastSuccess('Book added to your library')
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error))
+      toastError(getErrorMessage(error))
     },
   })
 }
 
 export function useDeleteBook() {
   const queryClient = useQueryClient()
-  const toast = useToastStore()
+  const toastSuccess = useToastStore((s) => s.success)
+  const toastError = useToastStore((s) => s.error)
 
   return useMutation({
     mutationFn: (bookId) => bookService.deleteBook(bookId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books'] })
       queryClient.invalidateQueries({ queryKey: ['home'] })
-      toast.success('Book removed from library')
+      toastSuccess('Book removed from library')
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error))
+      toastError(getErrorMessage(error))
     },
   })
 }

@@ -185,7 +185,7 @@ export default function Library() {
         </div>
       </main>
 
-      <AddBookModal open={addOpen} onClose={() => setAddOpen(false)} />
+      {addOpen && <AddBookModal onClose={() => setAddOpen(false)} />}
 
       {/* Delete confirmation dialog */}
       {confirmDelete && (

@@ -23,7 +23,7 @@ export default function Login() {
     setLoading(true)
     try {
       const data = await authService.login(form.email, form.password)
-      setAuth(data.token, data.user)
+      setAuth(data.user, data.token)
       navigate('/home')
     } catch (err) {
       setError(err?.response?.data?.message ?? 'Invalid email or password.')

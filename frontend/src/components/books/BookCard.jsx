@@ -9,7 +9,7 @@ function ProgressBadge({ progress }) {
   return <span className="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-md">Reading · {Math.round(progress.percentage)}%</span>
 }
 
-export function BookCard({ book }) {
+export function BookCard({ book, onDelete }) {
   const navigate = useNavigate()
   const deleteBook = useDeleteBook()
   const [showMenu, setShowMenu] = useState(false)
@@ -19,7 +19,9 @@ export function BookCard({ book }) {
 
   const handleDelete = (e) => {
     e.stopPropagation()
-    if (window.confirm(`Remove "${book.title}" from your library?`)) {
+    if (onDelete) {
+      onDelete(book.id)
+    } else if (window.confirm(`Remove "${book.title}" from your library?`)) {
       deleteBook.mutate(book.id)
     }
     setShowMenu(false)
