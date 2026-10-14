@@ -1,5 +1,7 @@
 import api from './api'
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
+
 export const bookService = {
   getHomeData: async () => {
     const res = await api.get('/home')
@@ -18,7 +20,6 @@ export const bookService = {
 
   uploadBook: async (formData, onProgress) => {
     const res = await api.post('/books', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
       onUploadProgress: (e) => {
         if (onProgress && e.total) {
           onProgress(Math.round((e.loaded * 100) / e.total))
@@ -33,10 +34,8 @@ export const bookService = {
   },
 
   getPdfUrl: (bookId) => {
-    const token = localStorage.getItem('folio-auth')
-      ? JSON.parse(localStorage.getItem('folio-auth'))?.state?.token
-      : null
-    const base = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
-    return `${base}/books/${bookId}/file?token=${token || ''}`
+    const stored = localStorage.getItem('folio-auth')
+    const token = stored ? JSON.parse(stored)?.state?.token : null
+    return `${BASE_URL}/books/${bookId}/file?token=${token || ''}`
   },
 }

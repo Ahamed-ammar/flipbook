@@ -11,6 +11,8 @@ const STEPS = {
 const MAX_SIZE_MB = 150
 const ALLOWED_TYPES = ['application/pdf']
 
+// All hooks are always called — no conditional returns before hooks.
+// Visibility is controlled by the PARENT with: {open && <AddBookModal />}
 export function AddBookModal({ onClose }) {
   const [step, setStep] = useState(STEPS.DROP)
   const [file, setFile] = useState(null)
@@ -35,25 +37,24 @@ export function AddBookModal({ onClose }) {
     return null
   }
 
-  const handleFile = (f) => {
+  const handleFile = useCallback((f) => {
     const err = validateFile(f)
     if (err) { setError(err); return }
     setError('')
     setFile(f)
-    // Pre-fill title from filename
     const baseName = f.name.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ')
     setTitle(baseName)
-  }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleDrop = useCallback((e) => {
     e.preventDefault()
     setDragOver(false)
     const f = e.dataTransfer.files[0]
     if (f) handleFile(f)
-  }, [])
+  }, [handleFile])
 
-  const handleDragOver = (e) => { e.preventDefault(); setDragOver(true) }
-  const handleDragLeave = () => setDragOver(false)
+  const handleDragOver = useCallback((e) => { e.preventDefault(); setDragOver(true) }, [])
+  const handleDragLeave = useCallback(() => setDragOver(false), [])
 
   const simulateStep = (idx, status, detail = '') => {
     setUploadSteps((prev) =>
@@ -71,7 +72,6 @@ export function AddBookModal({ onClose }) {
     if (title) formData.append('title', title)
     if (author) formData.append('author', author)
 
-    // Simulate step progression
     const stepTimer = (delay, fn) => new Promise((r) => setTimeout(() => { fn(); r() }, delay))
 
     try {
@@ -82,7 +82,7 @@ export function AddBookModal({ onClose }) {
           setProgress(p)
           if (p >= 30) simulateStep(0, 'done', '100%')
           if (p >= 60) simulateStep(1, 'done', 'Verified')
-          if (p >= 80) { simulateStep(2, 'active') }
+          if (p >= 80) simulateStep(2, 'active')
           if (p >= 95) { simulateStep(2, 'done'); simulateStep(3, 'active') }
         },
       })
@@ -143,7 +143,6 @@ export function AddBookModal({ onClose }) {
         <div className="lg:col-span-7 flex flex-col gap-space-md">
           {step === STEPS.DROP && (
             <>
-              {/* Drop zone */}
               <div
                 className={`relative rounded-xl border-2 border-dashed p-8 flex flex-col items-center justify-center gap-space-md cursor-pointer transition-all ${
                   dragOver
@@ -180,13 +179,10 @@ export function AddBookModal({ onClose }) {
                 {error && <p className="text-error font-ui-body-sm text-ui-body-sm">{error}</p>}
               </div>
 
-              {/* Meta fields */}
               {file && (
                 <div className="space-y-space-sm">
                   <div>
-                    <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
-                      Title
-                    </label>
+                    <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Title</label>
                     <input
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
@@ -195,9 +191,7 @@ export function AddBookModal({ onClose }) {
                     />
                   </div>
                   <div>
-                    <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
-                      Author
-                    </label>
+                    <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Author</label>
                     <input
                       value={author}
                       onChange={(e) => setAuthor(e.target.value)}
@@ -220,7 +214,7 @@ export function AddBookModal({ onClose }) {
                   <div className="min-w-0">
                     <p className="font-headline-sm text-headline-sm text-on-surface truncate">{title || file?.name}</p>
                     <p className="font-ui-body-sm text-ui-body-sm text-on-surface-variant">
-                      {(file?.size / 1024 / 1024).toFixed(1)} MB PDF
+                      {((file?.size ?? 0) / 1024 / 1024).toFixed(1)} MB PDF
                     </p>
                   </div>
                 </div>
@@ -228,14 +222,12 @@ export function AddBookModal({ onClose }) {
                   {progress}%
                 </span>
               </div>
-
               <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mb-space-md">
                 <div
                   className="h-full bg-gradient-to-r from-primary-container via-primary to-surface-tint rounded-full transition-all duration-500"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-
               <div className="space-y-space-sm bg-surface-container-lowest p-space-md rounded-lg">
                 {uploadSteps.map((s, i) => (
                   <div key={i} className={`flex items-start gap-space-sm ${s.status === 'pending' ? 'opacity-50' : ''}`}>
@@ -253,7 +245,6 @@ export function AddBookModal({ onClose }) {
                   </div>
                 ))}
               </div>
-
               <div className="mt-space-sm flex items-center gap-space-xs text-on-surface-variant">
                 <span className="material-symbols-outlined text-ui-body-sm text-tertiary">auto_awesome</span>
                 <p className="font-ui-body-sm text-ui-body-sm italic">Processing your manuscript...</p>
@@ -281,18 +272,14 @@ export function AddBookModal({ onClose }) {
           <div className="space-y-space-md">
             <div className="flex items-center justify-between">
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Shelf Placement</h2>
-              <span className="font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded">
-                Auto-Catalog
-              </span>
+              <span className="font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded">Auto-Catalog</span>
             </div>
 
             {file ? (
               <div className="flex gap-space-md items-center p-space-sm bg-surface-container-lowest rounded-lg shadow-sm">
                 <div className="w-16 aspect-[2/3] bg-primary-container text-on-primary-container rounded shadow-md overflow-hidden shrink-0 flex flex-col justify-between p-1.5">
                   <span className="font-label-sm text-[9px] uppercase tracking-wider opacity-80">PDF</span>
-                  <span className="font-headline-sm text-[10px] leading-tight font-bold line-clamp-3">
-                    {title || file.name}
-                  </span>
+                  <span className="font-headline-sm text-[10px] leading-tight font-bold line-clamp-3">{title || file.name}</span>
                   <span className="font-label-sm text-[8px] opacity-90 truncate">{author}</span>
                 </div>
                 <div className="min-w-0 flex-1">
@@ -306,25 +293,19 @@ export function AddBookModal({ onClose }) {
                 <div className="w-16 aspect-[2/3] bg-surface-container-high rounded shadow-inner flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-on-surface-variant">library_books</span>
                 </div>
-                <p className="font-ui-body-sm text-ui-body-sm text-on-surface-variant italic">
-                  Select a PDF to preview
-                </p>
+                <p className="font-ui-body-sm text-ui-body-sm text-on-surface-variant italic">Select a PDF to preview</p>
               </div>
             )}
 
             <div className="space-y-space-sm">
               <div>
-                <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
-                  Catalog Title
-                </label>
+                <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Catalog Title</label>
                 <div className="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-reading-body-sm text-reading-body-sm text-on-surface shadow-inner min-h-[36px]">
                   {title || <span className="text-on-surface-variant italic">Auto-detected from PDF</span>}
                 </div>
               </div>
               <div>
-                <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
-                  Author
-                </label>
+                <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Author</label>
                 <div className="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-ui-body-md text-ui-body-md text-on-surface shadow-inner min-h-[36px]">
                   {author || <span className="text-on-surface-variant italic">Auto-detected from PDF</span>}
                 </div>
@@ -332,7 +313,6 @@ export function AddBookModal({ onClose }) {
             </div>
           </div>
 
-          {/* Actions */}
           <div className="pt-space-md mt-space-md flex items-center justify-end gap-space-sm">
             <button
               onClick={onClose}

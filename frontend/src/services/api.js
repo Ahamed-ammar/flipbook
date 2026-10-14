@@ -3,14 +3,9 @@ import { useAuthStore } from '../store/authStore'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
 
-const api = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+const api = axios.create({ baseURL: BASE_URL })
 
-// Request interceptor — attach JWT
+// Attach JWT on every request
 api.interceptors.request.use(
   (config) => {
     const token = useAuthStore.getState().getToken()
@@ -22,7 +17,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-// Response interceptor — handle 401
+// On 401 — clear auth and redirect to login
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -36,7 +31,6 @@ api.interceptors.response.use(
 
 export default api
 
-// Helper to extract error message
 export function getErrorMessage(error) {
   return (
     error?.response?.data?.message ||
